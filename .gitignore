@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+work/
+*.decoded.lua
+ANALYSIS.md
+REPORT.md

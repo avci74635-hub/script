@@ -1,0 +1,21 @@
+# 12 — Glossary
+
+- **AST** — Abstract Syntax Tree; what parsers produce from source. All safe transforms happen here, not on raw text.
+- **CFG** — Control-Flow Graph; nodes = basic blocks, edges = possible jumps. Flattening converts a CFG into a dispatcher over a state variable.
+- **Basic block** — maximal straight-line run with single entry and single exit.
+- **Opaque predicate** — a condition whose value is constant (or cheaply provable) but looks data-dependent (`x*x >= 0`).
+- **Constant folding** — replacing constant expressions with their values at analysis time.
+- **Dead branch** — a branch never taken for any possible input (provable from constants).
+- **String table cipher** — encoded strings in a constant table + a decrypt function; call sites replaced by indices.
+- **Layer** — an obfuscation stage that decrypts and `loadstring`s the next one.
+- **VM / bytecode VM** — a custom virtual machine embedded in the script: bytecode array + a fetch/decode/dispatch loop; the hardest tier.
+- **Dispatch loop** — the `while true` + `switch`/`if` on a state variable or opcode.
+- **Upvalue** — a captured local from an enclosing scope; how closures smuggle shared secrets.
+- **Entropy localization** — finding the few genuine information bits (key, table, predicate truths) inside bulky uniform noise; the core skill of this pack.
+- **Trip count** — max iterations allowed for a loop in the sandbox before forced abort.
+- **Semantic rename** — assigning human-meaningful neutral names based on use, never presented as "original".
+- **Equivalence argument** — the written proof (per block) that reconstruction preserves behavior; Gate 4 of verification.
+- **Triage-only** — verdict tier: behavior documented, source not equivalently reconstructed.
+- **Fingerprint** — the machine-readable summary of obfuscation markers used to pick a pipeline route.
+- **Taint** — tracking where data from untrusted sources (decoder outputs) flows; used to prioritize review.
+- **Side effect** — anything observable: network, file, instance creation, `game.*` calls, prints. Calls with side effects are never deleted during DCE.
