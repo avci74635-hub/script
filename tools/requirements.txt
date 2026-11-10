@@ -1,0 +1,3 @@
+# This pack is deliberately stdlib-only so it runs on Termux with zero pip installs.
+# Optional heavier parsers (uncomment if you have PyPI access):
+# luaparser>=1.0   # Lua (not Luau) AST — use after stripping type annotations
